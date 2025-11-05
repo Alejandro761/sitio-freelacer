@@ -47,12 +47,18 @@ body {
     border-radius: .5rem;
     width: 90%;
     text-align: center;
+    border: none;
 }
 
 @media (min-width: 768px) {
     .boton {
         width: auto;
     }
+}
+
+/* hover es cuando tenemos el puntero sobre el elemento */
+.boton:hover {
+    cursor: pointer;
 }
 
 .sombra {
@@ -82,6 +88,25 @@ h1, h2, h3 {
 /* Titutlos */
 .titulo span {
     font-size: 2rem;
+}
+
+/* Utilidades */
+.w-sm-100 {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .w-sm-100 {
+        width: auto;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.alinear-derecha {
+    justify-content: flex-end;
 }
 
 /* Navegación prinicpal */
@@ -148,6 +173,7 @@ h1, h2, h3 {
     /* alinear  verticalmente*/
     justify-content: center;
 }
+
 .contenido-hero h2,
 .contenido-hero p{
     color: var(--blanco);
@@ -192,9 +218,65 @@ h1, h2, h3 {
     width: 15rem;
     background-color: var(--primario);
     /* 50% para hacer un circulo */
-    border-radius: 50%; 
+    border-radius: 50%;
     display: flex;
     /* space evenly dara un margen igual entre todos los items e items extremos */
     justify-content: space-evenly;
     align-items: center;
+}
+
+/* contacto */
+.formulario {
+    background-color: var(--gris);
+    /* min utiliza el valor mas pequeño */
+    width: min(60rem, 100%); 
+    /* utilizar la alineación con margin cuando el padre del contenedor no sea flex o no es necesario que lo sea */
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset {
+    border: none;
+}
+
+.formulario legend {
+    /*text-align: center;  no funciona en firefox */ 
+    margin: 0 auto;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+.contenedor-campos {
+
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+/* seleccionar inputs de tipo texto */
+/* .campo input[type="text"] {
+
+} */
+
+.input-text {
+    width: 100%; 
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.enviar .boton {
+    width: 100%;
 }
