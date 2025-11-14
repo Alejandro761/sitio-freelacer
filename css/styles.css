@@ -12,6 +12,16 @@ html {
     font-size: 62.5%;
     /* border box define que el tamaño principal de un contenedor es el que le definamos */
     box-sizing: border-box;
+    /* al hacer scroll te lleva a la proxima sección de la app */
+    scroll-snap-type: y mandatory;
+}
+
+/* Scroll Snap */
+.servicios, .navegacion-principal, .formulario {
+    /*  */
+    scroll-snap-align: center;
+    /* para que vea esta sección antes que los de abajo */
+    /* scroll-snap-stop: always; */
 }
 
 /* * hace referencia a todos los elementos */
@@ -250,8 +260,18 @@ h1, h2, h3 {
     color: var(--primario);
 }
 
-.contenedor-campos {
+@media (min-width: 768px) {
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+    }
 
+    .campo:nth-child(3), .campo:nth-child(4) {
+        /* que tome de la columna 1 a la 3 */
+        grid-column: 1 / 3;
+    }
 }
 
 .campo {
@@ -269,6 +289,10 @@ h1, h2, h3 {
 /* .campo input[type="text"] {
 
 } */
+.campo textarea {
+    height: 20rem;
+}
+
 
 .input-text {
     width: 100%; 
@@ -279,4 +303,9 @@ h1, h2, h3 {
 
 .enviar .boton {
     width: 100%;
+}
+
+/* footer */
+.footer {
+    text-align: center;
 }
